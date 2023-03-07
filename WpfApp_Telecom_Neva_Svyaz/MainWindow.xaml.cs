@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp_Telecom_Neva_Svyaz.Classes;
+using WpfApp_Telecom_Neva_Svyaz.Pages;
 
 namespace WpfApp_Telecom_Neva_Svyaz
 {
@@ -23,6 +25,9 @@ namespace WpfApp_Telecom_Neva_Svyaz
         public MainWindow()
         {
             InitializeComponent();
+
+            FrameClass.MainFrame = fMain;
+            FrameClass.MainFrame.Navigate(new AutorizationPage());
         }
     }
 }
