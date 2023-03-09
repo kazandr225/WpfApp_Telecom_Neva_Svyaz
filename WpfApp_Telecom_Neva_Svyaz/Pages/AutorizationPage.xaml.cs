@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+using WpfApp_Telecom_Neva_Svyaz.Classes;
 
 namespace WpfApp_Telecom_Neva_Svyaz.Pages
 {
@@ -21,12 +24,14 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
     public partial class AutorizationPage : Page
     {
 
+        DispatcherTimer timercode = new DispatcherTimer(); //таймер для введения кода
+
         public static string number; //поля для записи корректных данных
         public static string pass;
 
         public static string anum; //сгенерированный код
 
-        public int sec = 10; //задаем требуемое для ожидание время
+        //public int sec = 10; //задаем требуемое для ожидание время
         public AutorizationPage()
         {
             InitializeComponent();
@@ -47,14 +52,37 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
 
             btnEnter.IsEnabled = true;
 
-            tbCode.Focus(); //курсор в поле для кода
+            CodeGenerator();
+
+
+            //таймер на введение кода
+            timercode.Interval = new TimeSpan(0,0,5); 
+            timercode.Start();
+            timercode.Tick += new EventHandler(again);    
         }
 
-        //Сделать таймер на отсчет лимита на введени сгенерированного кода
+        public void again(object sender, EventArgs e) //выводит сообщение и разблокирует кнопку обновления пароля
+        {
+            if (tbCode.Text == anum)
+            {
+                
+            }
+
+            else
+            {
+                MessageBox.Show("Сгенерируйте новый код", "Время истекло", MessageBoxButton.OK);
+                
+                tbCode.Text = "";
+
+                btnEnter.IsEnabled = false;
+                btnReset.IsEnabled = true;
+            }
+            timercode.Stop();
+        }
 
         private void btnEnter_Click(object sender, RoutedEventArgs e) //событие на кнопку входа
         {
-            if (tbCode.Text == "3") //сравнивам со сгенерированным кодом
+            if (tbCode.Text == "3") //сравнивам со сгенерированным кодом //стоит сравнить с записанными данными или сравнить их напрямую с базой
             {
                 MessageBox.Show("Вы вошли!");
             }
@@ -71,21 +99,52 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
                     MessageBox.Show("Ошибка ввода");
                 }
 
+                tbCode.IsEnabled = false;
                 btnEnter.IsEnabled = false;
                 btnReset.IsEnabled = true;
             }
         }
-         //можно удалить окно с введением кода, ведь оно уже есть на странице с авторизаций, в конструктор нужно закинуть таймер
-         //требуется доработать генерацию на заданные по заданию символы
-         //следует что-то сделать с конструктором, лучше всего будет просто обновить страницу с сохранением данных
+         
+         //требуется доработать генерацию на заданные по заданным символам
         public void CodeGenerator() //генерация кода
-        { 
+        {
             Random rnd = new Random();
             int num = rnd.Next(10000, 99999999); //случайное 8-ое число
 
-            MessageBox.Show(num.ToString(), "Запомните одноразовый код", MessageBoxButton.OK); //вывод сообщения со сгенерированным значением //добавить событие на нажатие по кнопке ОК
-             
+
+            MessageBox.Show(num.ToString(), "Запомните одноразовый код", MessageBoxButton.OK); //вывод сообщения со сгенерированным значением 
+            tbCode.Focus(); //курсор в поле для кода
             anum = num.ToString(); //записываем код для проверки //возможно придется поменять местами с месседж боксом
+
+            //Regex r = new Regex("/(?=.*[0 - 9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g");
+            
+
+            //Random rnd1 = new Random();
+            //char[] wordsymbs = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+            //int numsymbs = rnd1.Next(8,8); // 8 символов
+            //int wordnum; //число или цифра
+
+
+            //for (int j = 1; j <= numsymbs; j++) //генерируем цифру или символ
+            //{
+            //    wordnum = rnd1.Next(1, 2);
+            //    if (wordnum == 1)
+            //    {
+            //        int wordsymbs_num = rnd1.Next(0, wordsymbs.Length - 1); //генерируем символ
+            //        anum += wordsymbs[wordsymbs_num];
+            //    }
+
+            //    else
+            //    {
+            //        MessageBox.Show("Да-да");
+            //    }
+            //}
+
+            //MessageBox.Show(anum.ToString(), "Запомните одноразовый код", MessageBoxButton.OK); //вывод сообщения со сгенерированным значением //добавить событие на нажатие по кнопке ОК
+
+
+            //MessageBox.Show(numsymbs.ToString(), "Запомните одноразовый код", MessageBoxButton.OK); //вывод сообщения со сгенерированным значением //добавить событие на нажатие по кнопке ОК
+            //anum = numsymbs.ToString(); //записываем код для проверки //возможно придется поменять местами с месседж боксом
         }
 
         private void btnCancle_Click(object sender, RoutedEventArgs e) //очистка значений
@@ -98,6 +157,14 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
         private void btnReset_Click(object sender, RoutedEventArgs e) //сгенерировать новый пароль
         {
             MessageBox.Show("Вывел");
+            tbCode.Text = "";
+            
+            tbCode.IsEnabled = true;
+            
+            btnEnter.IsEnabled = true;
+            btnReset.IsEnabled = false;
+
+            CodeGenerator();
         }
 
         private void tbNumber_KeyDown(object sender, KeyEventArgs e)
@@ -106,8 +173,6 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
             {
                 if (tbNumber.Text == "1") //успешный ввод
                 {
-                    //MessageBox.Show("Добро пожаловать");
-
                     tbPassword.IsEnabled = true;
                     tbPassword.Focus();
                 }
@@ -120,19 +185,18 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
 
         private void tbPasswoed_KeyDown(object sender, KeyEventArgs e)
         {
-            NumWindow NW = new NumWindow();
 
             if (e.Key == Key.Enter) //тут проверяем правильность пароля, если верный, то выводим окно со сгенерированным кодом. Если пароль неправильный, то выводим сообщение
             {
                 if (tbPassword.Text == "2") //записываем данные при успешном вводе
                 {
+
                     number = tbNumber.Text;
                     pass = tbPassword.Text;
 
                     MessageBox.Show("Верный пароль");
-
-                    CodeGenerator();
-                    //NW.Show();
+                    FrameClass.MainFrame.Navigate(new AutorizationPage(1));
+                    //CodeGenerator();
                 }
                 else
                 {
