@@ -103,48 +103,44 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
                 btnEnter.IsEnabled = false;
                 btnReset.IsEnabled = true;
             }
+            
+            timercode.Stop();
         }
          
-         //требуется доработать генерацию на заданные по заданным символам
         public void CodeGenerator() //генерация кода
         {
-            Random rnd = new Random();
-            int num = rnd.Next(10000, 99999999); //случайное 8-ое число
 
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToLower();
+            var char2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var nums = "1234567890";
+            var symbs = "!@#$%^&*";
 
-            MessageBox.Show(num.ToString(), "Запомните одноразовый код", MessageBoxButton.OK); //вывод сообщения со сгенерированным значением 
+            Random random = new Random();
+            var stringChars = new char[8];
+
+            for (int i = 0; i <= 1; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+
+            for (int i = 2; i <= 3; i++)
+            {
+                stringChars[i] = char2[random.Next(char2.Length)];
+            }
+
+            for (int i = 4; i <= 5; i++)
+            {
+                stringChars[i] = nums[random.Next(nums.Length)];
+            }
+
+            for (int i = 6; i <= 7; i++)
+            {
+                stringChars[i] = symbs[random.Next(symbs.Length)];
+            }
+
+            anum = new String(stringChars);
+            MessageBox.Show(anum, "Запомните одноразовый код", MessageBoxButton.OK); //вывод сообщения со сгенерированным значением 
             tbCode.Focus(); //курсор в поле для кода
-            anum = num.ToString(); //записываем код для проверки //возможно придется поменять местами с месседж боксом
-
-            //Regex r = new Regex("/(?=.*[0 - 9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g");
-            
-
-            //Random rnd1 = new Random();
-            //char[] wordsymbs = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
-            //int numsymbs = rnd1.Next(8,8); // 8 символов
-            //int wordnum; //число или цифра
-
-
-            //for (int j = 1; j <= numsymbs; j++) //генерируем цифру или символ
-            //{
-            //    wordnum = rnd1.Next(1, 2);
-            //    if (wordnum == 1)
-            //    {
-            //        int wordsymbs_num = rnd1.Next(0, wordsymbs.Length - 1); //генерируем символ
-            //        anum += wordsymbs[wordsymbs_num];
-            //    }
-
-            //    else
-            //    {
-            //        MessageBox.Show("Да-да");
-            //    }
-            //}
-
-            //MessageBox.Show(anum.ToString(), "Запомните одноразовый код", MessageBoxButton.OK); //вывод сообщения со сгенерированным значением //добавить событие на нажатие по кнопке ОК
-
-
-            //MessageBox.Show(numsymbs.ToString(), "Запомните одноразовый код", MessageBoxButton.OK); //вывод сообщения со сгенерированным значением //добавить событие на нажатие по кнопке ОК
-            //anum = numsymbs.ToString(); //записываем код для проверки //возможно придется поменять местами с месседж боксом
         }
 
         private void btnCancle_Click(object sender, RoutedEventArgs e) //очистка значений
