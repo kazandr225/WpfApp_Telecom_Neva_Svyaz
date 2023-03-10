@@ -12,10 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfApp_Telecom_Neva_Svyaz.Classes;
-using WpfApp_Telecom_Neva_Svyaz.Pages;
+using WpfApp_Telecom_Neva_Svyaz_2.Classes;
+using WpfApp_Telecom_Neva_Svyaz_2.Pages;
 
-namespace WpfApp_Telecom_Neva_Svyaz
+namespace WpfApp_Telecom_Neva_Svyaz_2
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -26,9 +26,8 @@ namespace WpfApp_Telecom_Neva_Svyaz
         {
             InitializeComponent();
 
-            BaseClass.EM = new Entities();
             FrameClass.MainFrame = fMain;
-            FrameClass.MainFrame.Navigate(new AutorizationPage());
+            FrameClass.MainFrame.Navigate(new WorkingPage());
         }
     }
 }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AFB6868F-7667-42C4-8F05-EFE048D5651F}</ProjectGuid>
+    <ProjectGuid>{F7C83240-3D28-4BDF-8BBF-3711DB447B6C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WpfApp_Telecom_Neva_Svyaz</RootNamespace>
-    <AssemblyName>WpfApp_Telecom_Neva_Svyaz</AssemblyName>
+    <RootNamespace>WpfApp_Telecom_Neva_Svyaz_2</RootNamespace>
+    <AssemblyName>WpfApp_Telecom_Neva_Svyaz_2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -34,21 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>image.ico</ApplicationIcon>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -67,18 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Classes\BaseClass.cs" />
-    <Compile Include="Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Roles.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Users.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -92,24 +68,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\AutorizationPage.xaml">
+    <Page Include="Pages\WorkingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\AutorizationPage.xaml.cs">
-      <DependentUpon>AutorizationPage.xaml</DependentUpon>
+    <Compile Include="Pages\WorkingPage.xaml.cs">
+      <DependentUpon>WorkingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -128,14 +94,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </None>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -144,29 +102,46 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="image.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
-    <Content Include="Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Лого ТНС.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\На авторизацию_Обновление кода.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Resource Include="Resources\CRM.png" />
+    <Resource Include="Resources\ID1516.jpg" />
+    <Resource Include="Resources\ID1517.png" />
+    <Resource Include="Resources\ID1518.png" />
+    <Resource Include="Resources\ID1519.png" />
+    <Resource Include="Resources\ID1520.png" />
+    <Resource Include="Resources\ID1521.jpg" />
+    <Resource Include="Resources\ID1522.png" />
+    <Resource Include="Resources\ID1523.jpg" />
+    <Resource Include="Resources\ID1524.jpg" />
+    <Resource Include="Resources\ID1525.jpg" />
+    <Resource Include="Resources\ID1526.jpg" />
+    <Content Include="Resources\ID1527.jpg" />
+    <Resource Include="Resources\ID1528.jpg" />
+    <Resource Include="Resources\ID1529.jpg" />
+    <Resource Include="Resources\ID1530.jpg" />
+    <Resource Include="Resources\ID1531.jpg" />
+    <Resource Include="Resources\ID1532.jpg" />
+    <Resource Include="Resources\ID1533.jpg" />
+    <Resource Include="Resources\ID1534.jpg" />
+    <Resource Include="Resources\ID1535.png" />
+    <Resource Include="Resources\ID1536.png" />
+    <Resource Include="Resources\ID1537.jpg" />
+    <Resource Include="Resources\ID1538.jpg" />
+    <Resource Include="Resources\ID1539.png" />
+    <Resource Include="Resources\ID1540.jpg" />
+    <Resource Include="Resources\ID1541.jpg" />
+    <Resource Include="Resources\ID1542.jpg" />
+    <Resource Include="Resources\ID1543.jpg" />
+    <Resource Include="Resources\ID1544.jpg" />
+    <Resource Include="Resources\ID1545.jpg" />
+    <Resource Include="Resources\Абоненты.png" />
+    <Resource Include="Resources\Активы.png" />
+    <Resource Include="Resources\Биллинг.jpg" />
+    <Resource Include="Resources\Поддержка пользователей.jpg" />
+    <Resource Include="Resources\Управление обрудованием.jpg" />
+    <Resource Include="Resources\Фото для заглушки при отсутствии фото сотрудника.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

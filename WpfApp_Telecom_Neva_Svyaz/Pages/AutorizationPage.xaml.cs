@@ -31,7 +31,6 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
 
         public static string anum; //сгенерированный код
 
-        //public int sec = 10; //задаем требуемое для ожидание время
         public AutorizationPage()
         {
             InitializeComponent();
@@ -43,7 +42,7 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
             btnReset.IsEnabled = false;
         }
 
-        public AutorizationPage(int a) //сюда еще код передать чтоли?
+        public AutorizationPage(int a) 
         {
             InitializeComponent();
 
@@ -54,9 +53,8 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
 
             CodeGenerator();
 
-
             //таймер на введение кода
-            timercode.Interval = new TimeSpan(0,0,5); 
+            timercode.Interval = new TimeSpan(0,0,10); 
             timercode.Start();
             timercode.Tick += new EventHandler(again);    
         }
@@ -82,7 +80,9 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
 
         private void btnEnter_Click(object sender, RoutedEventArgs e) //событие на кнопку входа
         {
-            if (tbCode.Text == "3") //сравнивам со сгенерированным кодом //стоит сравнить с записанными данными или сравнить их напрямую с базой
+            
+
+            if (tbCode.Text == "3") //сравнивам со сгенерированным кодом 
             {
                 MessageBox.Show("Вы вошли!");
             }
@@ -109,7 +109,6 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
          
         public void CodeGenerator() //генерация кода
         {
-
             var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToLower();
             var char2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var nums = "1234567890";
@@ -165,34 +164,40 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
 
         private void tbNumber_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter) //далее прописать метод для сверки значения из базы, можно через вложенное условие
+            
+
+            if (e.Key == Key.Enter)
             {
-                if (tbNumber.Text == "1") //успешный ввод
-                {
-                    tbPassword.IsEnabled = true;
-                    tbPassword.Focus();
-                }
-                else //допущена ошибка
+                if (tbNumber.Text == "" || tbNumber.Text == " ") //допущена ошибка
                 {
                     MessageBox.Show("Ну а чего ты хотел?");
-                }
+                }        
+                    Users autoUser = BaseClass.EM.Users.FirstOrDefault(x => x.Phone == tbNumber.Text);
+
+                    if (autoUser == null)
+                    {
+                        MessageBox.Show("Пользователь с таким номером не найден");
+                    }
+                    else 
+                    {
+                        tbPassword.IsEnabled = true;
+                        tbPassword.Focus();
+                    }
             }
         }
 
         private void tbPasswoed_KeyDown(object sender, KeyEventArgs e)
         {
 
-            if (e.Key == Key.Enter) //тут проверяем правильность пароля, если верный, то выводим окно со сгенерированным кодом. Если пароль неправильный, то выводим сообщение
+            if (e.Key == Key.Enter) //тут проверяем правильность пароля, если верный, то выводим окно со сгенерированным кодом. Если пароль неправильный - то выводим сообщение
             {
                 if (tbPassword.Text == "2") //записываем данные при успешном вводе
                 {
-
                     number = tbNumber.Text;
                     pass = tbPassword.Text;
 
                     MessageBox.Show("Верный пароль");
                     FrameClass.MainFrame.Navigate(new AutorizationPage(1));
-                    //CodeGenerator();
                 }
                 else
                 {

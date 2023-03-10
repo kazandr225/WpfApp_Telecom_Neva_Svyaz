@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WpfApp_Telecom_Neva_Svyaz.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AutorizationPage">
+      Title="AutorizationPage" >
 
     <Grid>
         <Grid.RowDefinitions>
