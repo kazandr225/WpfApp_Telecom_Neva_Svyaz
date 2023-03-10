@@ -26,7 +26,7 @@ namespace WpfApp_Telecom_Neva_Svyaz
         {
             InitializeComponent();
 
-            BaseClass.EM = new Entities();
+            BaseClass.EM = new EntitiesModel();
             FrameClass.MainFrame = fMain;
             FrameClass.MainFrame.Navigate(new AutorizationPage());
         }

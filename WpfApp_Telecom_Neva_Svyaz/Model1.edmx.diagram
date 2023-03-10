@@ -4,8 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="84e10229d0dd4fe2a872d4afd9456fc9" Name="Diagram1">
+      <Diagram DiagramId="46a75c2ed02242bd817c280cc16e3339" Name="Diagram1">
         <EntityTypeShape EntityType="CRM9Model.Roles" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM9Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CRM9Model.Users" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="CRM9Model.FK_Users_Roles" ManuallyRouted="false" />
       </Diagram>

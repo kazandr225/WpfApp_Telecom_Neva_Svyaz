@@ -13,10 +13,10 @@ namespace WpfApp_Telecom_Neva_Svyaz
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class EntitiesModel : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public EntitiesModel()
+            : base("name=EntitiesModel")
         {
         }
     
@@ -26,6 +26,7 @@ namespace WpfApp_Telecom_Neva_Svyaz
         }
     
         public virtual DbSet<Roles> Roles { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }
 }

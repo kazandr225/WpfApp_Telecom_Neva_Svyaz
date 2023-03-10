@@ -63,7 +63,7 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
         {
             if (tbCode.Text == anum)
             {
-                
+
             }
 
             else
@@ -151,7 +151,6 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
 
         private void btnReset_Click(object sender, RoutedEventArgs e) //сгенерировать новый пароль
         {
-            MessageBox.Show("Вывел");
             tbCode.Text = "";
             
             tbCode.IsEnabled = true;
@@ -168,10 +167,12 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
 
             if (e.Key == Key.Enter)
             {
-                if (tbNumber.Text == "" || tbNumber.Text == " ") //допущена ошибка
-                {
-                    MessageBox.Show("Ну а чего ты хотел?");
-                }        
+                    if (tbNumber.Text == "" || tbNumber.Text == " ") //допущена ошибка
+                    {
+                        MessageBox.Show("Ошибка ввода");
+                        return;
+                    }
+                    
                     Users autoUser = BaseClass.EM.Users.FirstOrDefault(x => x.Phone == tbNumber.Text);
 
                     if (autoUser == null)
@@ -189,19 +190,27 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
         private void tbPasswoed_KeyDown(object sender, KeyEventArgs e)
         {
 
-            if (e.Key == Key.Enter) //тут проверяем правильность пароля, если верный, то выводим окно со сгенерированным кодом. Если пароль неправильный - то выводим сообщение
+            if (e.Key == Key.Enter) //тут проверяем правильность пароля
             {
-                if (tbPassword.Text == "2") //записываем данные при успешном вводе
+                if (tbPassword.Text == "" || tbPassword.Text == " ")
+                {
+                    MessageBox.Show("Ошибка ввода");
+                    return;
+                }
+
+                Users autoUser = BaseClass.EM.Users.FirstOrDefault(x => x.Password == tbPassword.Text);
+
+                if (autoUser == null) //записываем данные при успешном вводе
+                {
+                    MessageBox.Show("Неверный пароль", "Повторите ввод", MessageBoxButton.OK);
+                }
+                else
                 {
                     number = tbNumber.Text;
                     pass = tbPassword.Text;
 
                     MessageBox.Show("Верный пароль");
                     FrameClass.MainFrame.Navigate(new AutorizationPage(1));
-                }
-                else
-                {
-                    MessageBox.Show("Неверный пароль", "Повторите ввод", MessageBoxButton.OK);
                 }
             }
         }

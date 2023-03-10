@@ -8,6 +8,6 @@ namespace WpfApp_Telecom_Neva_Svyaz.Classes
 {
     internal class BaseClass
     {
-        public static Entities EM;
+        public static EntitiesModel EM;
     }
 }
