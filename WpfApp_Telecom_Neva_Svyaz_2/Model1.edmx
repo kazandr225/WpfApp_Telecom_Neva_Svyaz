@@ -1,0 +1,605 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище CRM9Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdressSubscriber">
+          <Key>
+            <PropertyRef Name="idAdressSubscriber" />
+          </Key>
+          <Property Name="idAdressSubscriber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Region" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prefix" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="House" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="idArea" />
+          </Key>
+          <Property Name="idArea" Type="int" Nullable="false" />
+          <Property Name="AreaName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Sqare" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Population" Type="int" Nullable="false" />
+          <Property Name="CountMetro" Type="int" Nullable="false" />
+          <Property Name="idTypeBinding" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="idCity" />
+          </Key>
+          <Property Name="idCity" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contract_Type">
+          <Key>
+            <PropertyRef Name="idContract_Type" />
+          </Key>
+          <Property Name="idContract_Type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Contract_Type" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DivisionCode">
+          <Key>
+            <PropertyRef Name="idDevisionCode" />
+          </Key>
+          <Property Name="idDevisionCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DivisionCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FMS">
+          <Key>
+            <PropertyRef Name="idIssued" />
+          </Key>
+          <Property Name="idIssued" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FMS" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="idGender" />
+          </Key>
+          <Property Name="idGender" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReasonTerminate">
+          <Key>
+            <PropertyRef Name="idReasonTerminate" />
+          </Key>
+          <Property Name="idReasonTerminate" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReasonTerminate" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="idRole" />
+          </Key>
+          <Property Name="idRole" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Role" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SerialNumber">
+          <Key>
+            <PropertyRef Name="idSerialNumber" />
+          </Key>
+          <Property Name="idSerialNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="idService" />
+          </Key>
+          <Property Name="idService" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Service" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Streets">
+          <Key>
+            <PropertyRef Name="idStreet" />
+          </Key>
+          <Property Name="idStreet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subscriber">
+          <Key>
+            <PropertyRef Name="idSubscriber" />
+          </Key>
+          <Property Name="idSubscriber" Type="int" Nullable="false" />
+          <Property Name="NumberSubscriber" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="idGender" Type="int" Nullable="false" />
+          <Property Name="Birthday" Type="date" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RegistrationAdress" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Number" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Passport" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="idDivisionCode" Type="int" Nullable="false" />
+          <Property Name="idIssued" Type="int" Nullable="false" />
+          <Property Name="IssuedDate" Type="date" Nullable="false" />
+          <Property Name="ContractNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ConclusionDate" Type="date" Nullable="false" />
+          <Property Name="idContractType" Type="int" Nullable="false" />
+          <Property Name="idReasonTerminate" Type="int" />
+          <Property Name="TerminateDate" Type="date" />
+          <Property Name="PersonalAccaunt" Type="nvarchar" MaxLength="50" />
+          <Property Name="RentDate" Type="date" Nullable="false" />
+          <Property Name="idSerialNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subscriber_Service">
+          <Key>
+            <PropertyRef Name="idSubscriber_Service" />
+          </Key>
+          <Property Name="idSubscriber_Service" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idService" Type="int" Nullable="false" />
+          <Property Name="idSubscriber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TypeBilding">
+          <Key>
+            <PropertyRef Name="idTypeBinding" />
+          </Key>
+          <Property Name="idTypeBinding" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeBinding" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="idUser" />
+          </Key>
+          <Property Name="idUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar(max)" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="Patronymic" Type="nvarchar(max)" />
+          <Property Name="idGender" Type="int" Nullable="false" />
+          <Property Name="image" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="idRole" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Users_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="idRole" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="idRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище CRM9ModelContainer">
+          <EntitySet Name="AdressSubscriber" EntityType="Self.AdressSubscriber" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contract_Type" EntityType="Self.Contract_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DivisionCode" EntityType="Self.DivisionCode" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FMS" EntityType="Self.FMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReasonTerminate" EntityType="Self.ReasonTerminate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SerialNumber" EntityType="Self.SerialNumber" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Streets" EntityType="Self.Streets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subscriber" EntityType="Self.Subscriber" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subscriber_Service" EntityType="Self.Subscriber_Service" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeBilding" EntityType="Self.TypeBilding" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CRM9Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdressSubscriber">
+          <Key>
+            <PropertyRef Name="idAdressSubscriber" />
+          </Key>
+          <Property Name="idAdressSubscriber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Region" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Prefix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="House" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="idArea" />
+          </Key>
+          <Property Name="idArea" Type="Int32" Nullable="false" />
+          <Property Name="AreaName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sqare" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Population" Type="Int32" Nullable="false" />
+          <Property Name="CountMetro" Type="Int32" Nullable="false" />
+          <Property Name="idTypeBinding" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="idCity" />
+          </Key>
+          <Property Name="idCity" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contract_Type">
+          <Key>
+            <PropertyRef Name="idContract_Type" />
+          </Key>
+          <Property Name="idContract_Type" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Contract_Type1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DivisionCode">
+          <Key>
+            <PropertyRef Name="idDevisionCode" />
+          </Key>
+          <Property Name="idDevisionCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DivisionCode1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FMS">
+          <Key>
+            <PropertyRef Name="idIssued" />
+          </Key>
+          <Property Name="idIssued" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FMS1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="idGender" />
+          </Key>
+          <Property Name="idGender" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gender1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReasonTerminate">
+          <Key>
+            <PropertyRef Name="idReasonTerminate" />
+          </Key>
+          <Property Name="idReasonTerminate" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReasonTerminate1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="idRole" />
+          </Key>
+          <Property Name="idRole" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="SerialNumber">
+          <Key>
+            <PropertyRef Name="idSerialNumber" />
+          </Key>
+          <Property Name="idSerialNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SerialNumber1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="idService" />
+          </Key>
+          <Property Name="idService" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Service1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Streets">
+          <Key>
+            <PropertyRef Name="idStreet" />
+          </Key>
+          <Property Name="idStreet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Street" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subscriber">
+          <Key>
+            <PropertyRef Name="idSubscriber" />
+          </Key>
+          <Property Name="idSubscriber" Type="Int32" Nullable="false" />
+          <Property Name="NumberSubscriber" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idGender" Type="Int32" Nullable="false" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RegistrationAdress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Passport" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idDivisionCode" Type="Int32" Nullable="false" />
+          <Property Name="idIssued" Type="Int32" Nullable="false" />
+          <Property Name="IssuedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ContractNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ConclusionDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="idContractType" Type="Int32" Nullable="false" />
+          <Property Name="idReasonTerminate" Type="Int32" />
+          <Property Name="TerminateDate" Type="DateTime" Precision="0" />
+          <Property Name="PersonalAccaunt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RentDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="idSerialNumber" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subscriber_Service">
+          <Key>
+            <PropertyRef Name="idSubscriber_Service" />
+          </Key>
+          <Property Name="idSubscriber_Service" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idService" Type="Int32" Nullable="false" />
+          <Property Name="idSubscriber" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TypeBilding">
+          <Key>
+            <PropertyRef Name="idTypeBinding" />
+          </Key>
+          <Property Name="idTypeBinding" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeBinding" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="idUser" />
+          </Key>
+          <Property Name="idUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Patronymic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="idGender" Type="Int32" Nullable="false" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idRole" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Roles" Relationship="Self.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
+        </EntityType>
+        <Association Name="FK_Users_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="idRole" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="idRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EntitiesModel" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdressSubscriber" EntityType="Self.AdressSubscriber" />
+          <EntitySet Name="Area" EntityType="Self.Area" />
+          <EntitySet Name="City" EntityType="Self.City" />
+          <EntitySet Name="Contract_Type" EntityType="Self.Contract_Type" />
+          <EntitySet Name="DivisionCode" EntityType="Self.DivisionCode" />
+          <EntitySet Name="FMS" EntityType="Self.FMS" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" />
+          <EntitySet Name="ReasonTerminate" EntityType="Self.ReasonTerminate" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" />
+          <EntitySet Name="SerialNumber" EntityType="Self.SerialNumber" />
+          <EntitySet Name="Service" EntityType="Self.Service" />
+          <EntitySet Name="Streets" EntityType="Self.Streets" />
+          <EntitySet Name="Subscriber" EntityType="Self.Subscriber" />
+          <EntitySet Name="Subscriber_Service" EntityType="Self.Subscriber_Service" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TypeBilding" EntityType="Self.TypeBilding" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище CRM9ModelContainer" CdmEntityContainer="EntitiesModel">
+          <EntitySetMapping Name="AdressSubscriber">
+            <EntityTypeMapping TypeName="CRM9Model.AdressSubscriber">
+              <MappingFragment StoreEntitySet="AdressSubscriber">
+                <ScalarProperty Name="idAdressSubscriber" ColumnName="idAdressSubscriber" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+                <ScalarProperty Name="House" ColumnName="House" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Area">
+            <EntityTypeMapping TypeName="CRM9Model.Area">
+              <MappingFragment StoreEntitySet="Area">
+                <ScalarProperty Name="idArea" ColumnName="idArea" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="Sqare" ColumnName="Sqare" />
+                <ScalarProperty Name="Population" ColumnName="Population" />
+                <ScalarProperty Name="CountMetro" ColumnName="CountMetro" />
+                <ScalarProperty Name="idTypeBinding" ColumnName="idTypeBinding" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="City">
+            <EntityTypeMapping TypeName="CRM9Model.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="idCity" ColumnName="idCity" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contract_Type">
+            <EntityTypeMapping TypeName="CRM9Model.Contract_Type">
+              <MappingFragment StoreEntitySet="Contract_Type">
+                <ScalarProperty Name="idContract_Type" ColumnName="idContract_Type" />
+                <ScalarProperty Name="Contract_Type1" ColumnName="Contract_Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DivisionCode">
+            <EntityTypeMapping TypeName="CRM9Model.DivisionCode">
+              <MappingFragment StoreEntitySet="DivisionCode">
+                <ScalarProperty Name="idDevisionCode" ColumnName="idDevisionCode" />
+                <ScalarProperty Name="DivisionCode1" ColumnName="DivisionCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FMS">
+            <EntityTypeMapping TypeName="CRM9Model.FMS">
+              <MappingFragment StoreEntitySet="FMS">
+                <ScalarProperty Name="idIssued" ColumnName="idIssued" />
+                <ScalarProperty Name="FMS1" ColumnName="FMS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gender">
+            <EntityTypeMapping TypeName="CRM9Model.Gender">
+              <MappingFragment StoreEntitySet="Gender">
+                <ScalarProperty Name="idGender" ColumnName="idGender" />
+                <ScalarProperty Name="Gender1" ColumnName="Gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReasonTerminate">
+            <EntityTypeMapping TypeName="CRM9Model.ReasonTerminate">
+              <MappingFragment StoreEntitySet="ReasonTerminate">
+                <ScalarProperty Name="idReasonTerminate" ColumnName="idReasonTerminate" />
+                <ScalarProperty Name="ReasonTerminate1" ColumnName="ReasonTerminate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="CRM9Model.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="idRole" ColumnName="idRole" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SerialNumber">
+            <EntityTypeMapping TypeName="CRM9Model.SerialNumber">
+              <MappingFragment StoreEntitySet="SerialNumber">
+                <ScalarProperty Name="idSerialNumber" ColumnName="idSerialNumber" />
+                <ScalarProperty Name="SerialNumber1" ColumnName="SerialNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service">
+            <EntityTypeMapping TypeName="CRM9Model.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="idService" ColumnName="idService" />
+                <ScalarProperty Name="Service1" ColumnName="Service" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Streets">
+            <EntityTypeMapping TypeName="CRM9Model.Streets">
+              <MappingFragment StoreEntitySet="Streets">
+                <ScalarProperty Name="idStreet" ColumnName="idStreet" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subscriber">
+            <EntityTypeMapping TypeName="CRM9Model.Subscriber">
+              <MappingFragment StoreEntitySet="Subscriber">
+                <ScalarProperty Name="idSubscriber" ColumnName="idSubscriber" />
+                <ScalarProperty Name="NumberSubscriber" ColumnName="NumberSubscriber" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="idGender" ColumnName="idGender" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="RegistrationAdress" ColumnName="RegistrationAdress" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Passport" ColumnName="Passport" />
+                <ScalarProperty Name="idDivisionCode" ColumnName="idDivisionCode" />
+                <ScalarProperty Name="idIssued" ColumnName="idIssued" />
+                <ScalarProperty Name="IssuedDate" ColumnName="IssuedDate" />
+                <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+                <ScalarProperty Name="ConclusionDate" ColumnName="ConclusionDate" />
+                <ScalarProperty Name="idContractType" ColumnName="idContractType" />
+                <ScalarProperty Name="idReasonTerminate" ColumnName="idReasonTerminate" />
+                <ScalarProperty Name="TerminateDate" ColumnName="TerminateDate" />
+                <ScalarProperty Name="PersonalAccaunt" ColumnName="PersonalAccaunt" />
+                <ScalarProperty Name="RentDate" ColumnName="RentDate" />
+                <ScalarProperty Name="idSerialNumber" ColumnName="idSerialNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subscriber_Service">
+            <EntityTypeMapping TypeName="CRM9Model.Subscriber_Service">
+              <MappingFragment StoreEntitySet="Subscriber_Service">
+                <ScalarProperty Name="idSubscriber_Service" ColumnName="idSubscriber_Service" />
+                <ScalarProperty Name="idService" ColumnName="idService" />
+                <ScalarProperty Name="idSubscriber" ColumnName="idSubscriber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CRM9Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeBilding">
+            <EntityTypeMapping TypeName="CRM9Model.TypeBilding">
+              <MappingFragment StoreEntitySet="TypeBilding">
+                <ScalarProperty Name="idTypeBinding" ColumnName="idTypeBinding" />
+                <ScalarProperty Name="TypeBinding" ColumnName="TypeBinding" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="CRM9Model.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="idGender" ColumnName="idGender" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="idRole" ColumnName="idRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

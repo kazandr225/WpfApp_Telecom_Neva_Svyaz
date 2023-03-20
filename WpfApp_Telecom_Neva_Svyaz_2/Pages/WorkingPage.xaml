@@ -43,11 +43,11 @@
         <StackPanel Grid.Column="1" Orientation="Horizontal">
             <ComboBox Name="cbUsers" Height="20" Width="150"/>
 
-            <Ellipse Height="50" Width="50">
+            <!--<Ellipse Height="50" Width="50">
                 <Ellipse.Fill>
                     <ImageBrush Stretch="UniformToFill" ImageSource="\Resources\Фото для заглушки при отсутствии фото сотрудника.jpg"/>
                 </Ellipse.Fill>
-            </Ellipse>
+            </Ellipse>-->
             
         </StackPanel>
 
