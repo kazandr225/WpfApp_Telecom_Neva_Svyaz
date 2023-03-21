@@ -80,11 +80,40 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
 
         private void btnEnter_Click(object sender, RoutedEventArgs e) //событие на кнопку входа
         {
-            
+            Users autoUser = BaseClass.EM.Users.FirstOrDefault(x => x.Phone == tbCode.Text && x.Password == tblPassword.Text);
 
-            if (tbCode.Text == "3") //сравнивам со сгенерированным кодом 
+            if (tbCode.Text == anum) //сравнивам со сгенерированным кодом 
             {
-                MessageBox.Show("Вы вошли!");
+                switch (autoUser.ID_Role) //проверяем роль пользователя
+                {
+                    case 1:
+                        MessageBox.Show("Ваша роль - руководитель отдела по работе с клиентами");
+                        break;
+
+                    case 2:
+                        MessageBox.Show("Ваша роль - менеджер по работе с клиентами");
+                        break;
+
+                    case 3:
+                        MessageBox.Show("Ваша роль - руководитель отдела технической поддержки");
+                        break;
+
+                    case 4:
+                        MessageBox.Show("Ваша роль - специалист технической поддержки");
+                        break;
+
+                    case 5:
+                        MessageBox.Show("Ваша роль - бухгалтер");
+                        break;
+
+                    case 6:
+                        MessageBox.Show("Ваша роль - директор по развитию");
+                        break;
+
+                    case 7:
+                        MessageBox.Show("Ваша роль - сотрудник технического депортамента");
+                        break;
+                }
             }
             else
             { 
@@ -94,7 +123,7 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
                     MessageBox.Show("Вы не ввели код, сгенерируйте новый");
                 }
                 
-                if (tbCode.Text != "3" || tbCode.Text != " ") //неверный код, подставить сгенерированный код
+                if (tbCode.Text != anum || tbCode.Text != " ") //неверный код, подставить сгенерированный код
                 {
                     MessageBox.Show("Ошибка ввода");
                 }

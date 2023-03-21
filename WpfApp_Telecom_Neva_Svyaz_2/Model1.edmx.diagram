@@ -4,25 +4,48 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ee4665c18e624afc80b5e4cd36188c47" Name="Diagram1">
-        <EntityTypeShape EntityType="CRM9Model.AdressSubscriber" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.Area" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.City" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.Contract_Type" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.DivisionCode" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.FMS" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.Gender" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.ReasonTerminate" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.Roles" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.SerialNumber" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.Service" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.Streets" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.Subscriber" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.Subscriber_Service" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.sysdiagrams" Width="1.5" PointX="6.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.TypeBilding" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.Users" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="CRM9Model.FK_Users_Roles" ManuallyRouted="false" />
+      <Diagram DiagramId="94d1adfac65c4d42bf0655bd293492bb" Name="Diagram1">
+        <EntityTypeShape EntityType="CRM15Model.Clients" Width="1.5" PointX="3.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.ConnectingTheService" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.Contracts" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.Emploe" Width="1.5" PointX="3.75" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.Equipment" Width="1.5" PointX="3.75" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.Gender" Width="1.5" PointX="1.5" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.InstallationEquipment" Width="1.5" PointX="6" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.KindsAndTypesService" Width="1.5" PointX="6" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.MACAdress" Width="1.5" PointX="2.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.MainService" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.Reasons" Width="1.5" PointX="1.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.Rols" Width="1.5" PointX="1.5" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.SerialNumbers" Width="1.5" PointX="1.5" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.Servise" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.Status" Width="1.5" PointX="3.75" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.sysdiagrams" Width="1.5" PointX="3.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.TypeEquipments" Width="1.5" PointX="1.5" PointY="36.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.TypeOfService" Width="1.5" PointX="3.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.TypeProblems" Width="1.5" PointX="3.75" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.TypesOfContracts" Width="1.5" PointX="1.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM15Model.TypesServices" Width="1.5" PointX="3.75" PointY="27.75" IsExpanded="true" />
+        <AssociationConnector Association="CRM15Model.FK_Clients_Contracts" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_Clients_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_InstallationEquipment_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_MainService_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_ConnectingTheService_Contracts" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_ConnectingTheService_Servise" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_Contracts_Reasons" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_Contracts_TypesOfContracts" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_Emploe_Rols" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_InstallationEquipment_Emploe" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_Equipment_SerialNumbers" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_Equipment_TypeEquipments" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_InstallationEquipment_Equipment" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_KindsAndTypesService_TypeOfService" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_KindsAndTypesService_TypesServices" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_MainService_Servise" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_MainService_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_MainService_TypeOfService" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_MainService_TypeProblems" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM15Model.FK_MainService_TypesServices" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

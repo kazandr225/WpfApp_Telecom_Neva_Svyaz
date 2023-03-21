@@ -13,10 +13,10 @@ namespace WpfApp_Telecom_Neva_Svyaz_2
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EntitiesModel : DbContext
+    public partial class EntitiesModel1 : DbContext
     {
-        public EntitiesModel()
-            : base("name=EntitiesModel")
+        public EntitiesModel1()
+            : base("name=EntitiesModel1")
         {
         }
     
@@ -25,22 +25,26 @@ namespace WpfApp_Telecom_Neva_Svyaz_2
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AdressSubscriber> AdressSubscriber { get; set; }
-        public virtual DbSet<Area> Area { get; set; }
-        public virtual DbSet<City> City { get; set; }
-        public virtual DbSet<Contract_Type> Contract_Type { get; set; }
-        public virtual DbSet<DivisionCode> DivisionCode { get; set; }
-        public virtual DbSet<FMS> FMS { get; set; }
+        public virtual DbSet<Clients> Clients { get; set; }
+        public virtual DbSet<ConnectingTheService> ConnectingTheService { get; set; }
+        public virtual DbSet<Contracts> Contracts { get; set; }
+        public virtual DbSet<Emploe> Emploe { get; set; }
+        public virtual DbSet<Equipment> Equipment { get; set; }
         public virtual DbSet<Gender> Gender { get; set; }
-        public virtual DbSet<ReasonTerminate> ReasonTerminate { get; set; }
-        public virtual DbSet<Roles> Roles { get; set; }
-        public virtual DbSet<SerialNumber> SerialNumber { get; set; }
-        public virtual DbSet<Service> Service { get; set; }
-        public virtual DbSet<Streets> Streets { get; set; }
-        public virtual DbSet<Subscriber> Subscriber { get; set; }
-        public virtual DbSet<Subscriber_Service> Subscriber_Service { get; set; }
+        public virtual DbSet<InstallationEquipment> InstallationEquipment { get; set; }
+        public virtual DbSet<KindsAndTypesService> KindsAndTypesService { get; set; }
+        public virtual DbSet<MACAdress> MACAdress { get; set; }
+        public virtual DbSet<MainService> MainService { get; set; }
+        public virtual DbSet<Reasons> Reasons { get; set; }
+        public virtual DbSet<Rols> Rols { get; set; }
+        public virtual DbSet<SerialNumbers> SerialNumbers { get; set; }
+        public virtual DbSet<Servise> Servise { get; set; }
+        public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<TypeBilding> TypeBilding { get; set; }
-        public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<TypeEquipments> TypeEquipments { get; set; }
+        public virtual DbSet<TypeOfService> TypeOfService { get; set; }
+        public virtual DbSet<TypeProblems> TypeProblems { get; set; }
+        public virtual DbSet<TypesOfContracts> TypesOfContracts { get; set; }
+        public virtual DbSet<TypesServices> TypesServices { get; set; }
     }
 }

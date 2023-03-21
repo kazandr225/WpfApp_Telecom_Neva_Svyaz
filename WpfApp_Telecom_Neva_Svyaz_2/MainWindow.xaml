@@ -6,10 +6,41 @@
         xmlns:local="clr-namespace:WpfApp_Telecom_Neva_Svyaz_2"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
-    
-    <Grid>
-        <Frame Name="fMain" Grid.Row="1" Grid.ColumnSpan="3" NavigationUIVisibility="Hidden">
 
-        </Frame>
+    <Grid Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="210"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.RowSpan="2" Margin="0,0,0,-50">
+            <Image Source="\Resources/Лого ТНС.jpg" Margin="10"/>
+            <StackPanel Name="spExpand">
+                <Button Name="btnAbon" Content="Абоненты" Height="40"  Margin="5" Click="btnAbon_Click"/>
+                <Button Name="btnMan" Height="40"  Margin="5"  >
+                    <TextBlock TextAlignment="Center">Управление <LineBreak/>оборудованием</TextBlock>
+                </Button>
+                <Button Name="btnAsse" Content="Активы" Height="40"  Margin="5" />
+                <Button Name="btnBill" Content="Биллинг" Height="40"  Margin="5"  />
+                <Button Name="btnSupp" Height="40"  Margin="5" >
+                    <TextBlock TextAlignment="Center">Поддержка <LineBreak/>пользователей</TextBlock>
+                </Button>
+                <Button Name="CRM" Content="CRM" Height="40"  Margin="5"   Click="CRM_Click"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" VerticalAlignment="Top" Margin="0,450,0,0"  Height="68">
+            <Button Content="?"  Height="31" Width="35" FontWeight="Bold" FontSize="16" Click="Button_Click"/>
+            <Button Content="Проф."  Height="27" Width="37"/>
+        </StackPanel>
+        <TextBlock Grid.Column="1" Name="tbMod" FontSize="25" Margin="8" FontWeight="DemiBold" />
+        <Frame Name="fMain" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden" Margin="10"/>
+        <StackPanel Name="spUser" Grid.ColumnSpan="3" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" Height="50" >
+            <StackPanel Orientation="Horizontal">
+                <ComboBox Name="cbEmp" FontSize="16" MinWidth="200" VerticalAlignment="Center" Margin="10" />
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

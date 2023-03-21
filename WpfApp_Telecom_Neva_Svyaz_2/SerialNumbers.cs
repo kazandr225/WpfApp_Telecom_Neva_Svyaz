@@ -12,9 +12,18 @@ namespace WpfApp_Telecom_Neva_Svyaz_2
     using System;
     using System.Collections.Generic;
     
-    public partial class DivisionCode
+    public partial class SerialNumbers
     {
-        public int idDevisionCode { get; set; }
-        public string DivisionCode1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SerialNumbers()
+        {
+            this.Equipment = new HashSet<Equipment>();
+        }
+    
+        public int IDSerialNumbers { get; set; }
+        public string Adress { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Equipment> Equipment { get; set; }
     }
 }

@@ -38,8 +38,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <CheckBox Name="cbActive" Grid.Column="0" VerticalAlignment="Center" Click="cbActive_Click">Активные</CheckBox>
-            <CheckBox Name="cbNotActive" Grid.Column="1" VerticalAlignment="Center" Click="cbNotActive_Click">Неактиыне</CheckBox>
+            <CheckBox Name="Active" Content="Активные" Grid.Column="0" VerticalAlignment="Center" Click="Active_Click"/>
+            <CheckBox Name="NotActive" Content="Неактивные" Grid.Column="1" VerticalAlignment="Center" Click="NotActive_Click"/>
         </Grid>
     </Grid>
     

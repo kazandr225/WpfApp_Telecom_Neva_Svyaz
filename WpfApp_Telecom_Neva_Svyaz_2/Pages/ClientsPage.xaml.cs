@@ -24,16 +24,16 @@ namespace WpfApp_Telecom_Neva_Svyaz_2.Pages
         public ClientsPage()
         {
             InitializeComponent();
-            dgSubscribers.ItemsSource = BaseClass.EM.Subscriber.ToList();
-            cbActive.IsChecked = true; //вывод клиентов с активными договорами
+            dgSubscribers.ItemsSource = BaseClass.ep.Clients.ToList();
+            //cbActive.IsChecked = true; //вывод клиентов с активными договорами
         }
 
-        private void cbActive_Click(object sender, RoutedEventArgs e)
+        private void Active_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void cbNotActive_Click(object sender, RoutedEventArgs e)
+        private void NotActive_Click(object sender, RoutedEventArgs e)
         {
 
         }

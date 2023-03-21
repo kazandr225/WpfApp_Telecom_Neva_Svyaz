@@ -12,9 +12,9 @@ namespace WpfApp_Telecom_Neva_Svyaz_2
     using System;
     using System.Collections.Generic;
     
-    public partial class TypeBilding
+    public partial class MACAdress
     {
-        public int idTypeBinding { get; set; }
-        public string TypeBinding { get; set; }
+        public int IDMACAdress { get; set; }
+        public string Adress { get; set; }
     }
 }

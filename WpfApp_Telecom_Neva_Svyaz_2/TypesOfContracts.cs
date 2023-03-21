@@ -12,9 +12,18 @@ namespace WpfApp_Telecom_Neva_Svyaz_2
     using System;
     using System.Collections.Generic;
     
-    public partial class City
+    public partial class TypesOfContracts
     {
-        public int idCity { get; set; }
-        public string CityName { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TypesOfContracts()
+        {
+            this.Contracts = new HashSet<Contracts>();
+        }
+    
+        public int IDOfTheContract { get; set; }
+        public string Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Contracts> Contracts { get; set; }
     }
 }

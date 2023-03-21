@@ -12,9 +12,14 @@ namespace WpfApp_Telecom_Neva_Svyaz_2
     using System;
     using System.Collections.Generic;
     
-    public partial class SerialNumber
+    public partial class ConnectingTheService
     {
-        public int idSerialNumber { get; set; }
-        public string SerialNumber1 { get; set; }
+        public int IDOfTheConnectedService { get; set; }
+        public int IDServices { get; set; }
+        public int SubscribersID { get; set; }
+        public Nullable<System.DateTime> ConnectionDate { get; set; }
+    
+        public virtual Contracts Contracts { get; set; }
+        public virtual Servise Servise { get; set; }
     }
 }

@@ -12,9 +12,18 @@ namespace WpfApp_Telecom_Neva_Svyaz_2
     using System;
     using System.Collections.Generic;
     
-    public partial class Service
+    public partial class TypeProblems
     {
-        public int idService { get; set; }
-        public string Service1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TypeProblems()
+        {
+            this.MainService = new HashSet<MainService>();
+        }
+    
+        public int IDTypesOfProblems { get; set; }
+        public string Problem { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MainService> MainService { get; set; }
     }
 }

@@ -25,9 +25,29 @@ namespace WpfApp_Telecom_Neva_Svyaz_2
         public MainWindow()
         {
             InitializeComponent();
-
+            
+            BaseClass.ep = new EntitiesModel1();
             FrameClass.MainFrame = fMain;
-            FrameClass.MainFrame.Navigate(new WorkingPage());
+            FrameClass.MainFrame.Navigate(new ClientsPage());
+            cbEmp.ItemsSource = BaseClass.ep.Emploe.ToList();
+            cbEmp.DisplayMemberPath = "Surname";
+            cbEmp.SelectedValuePath = "IDEmploys";
+            cbEmp.SelectedIndex = 0;
+        }
+
+        private void btnAbon_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CRM_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

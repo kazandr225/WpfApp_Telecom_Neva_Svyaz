@@ -12,10 +12,13 @@ namespace WpfApp_Telecom_Neva_Svyaz_2
     using System;
     using System.Collections.Generic;
     
-    public partial class Subscriber_Service
+    public partial class KindsAndTypesService
     {
-        public int idSubscriber_Service { get; set; }
-        public int idService { get; set; }
-        public int idSubscriber { get; set; }
+        public int KindsAndTypesServiceID { get; set; }
+        public int TypeOfServiceID { get; set; }
+        public int ServiceType { get; set; }
+    
+        public virtual TypeOfService TypeOfService { get; set; }
+        public virtual TypesServices TypesServices { get; set; }
     }
 }
