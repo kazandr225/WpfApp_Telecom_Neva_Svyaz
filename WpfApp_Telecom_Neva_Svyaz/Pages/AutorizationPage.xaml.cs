@@ -84,7 +84,7 @@ namespace WpfApp_Telecom_Neva_Svyaz.Pages
 
             if (tbCode.Text == anum) //сравнивам со сгенерированным кодом 
             {
-                switch (autoUser.ID_Role) //проверяем роль пользователя
+                switch (autoUser.idRole) //проверяем роль пользователя
                 {
                     case 1:
                         MessageBox.Show("Ваша роль - руководитель отдела по работе с клиентами");

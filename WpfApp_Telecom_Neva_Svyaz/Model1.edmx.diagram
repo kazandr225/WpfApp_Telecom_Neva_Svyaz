@@ -4,11 +4,36 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="46a75c2ed02242bd817c280cc16e3339" Name="Diagram1">
-        <EntityTypeShape EntityType="CRM9Model.Roles" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRM9Model.Users" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <AssociationConnector Association="CRM9Model.FK_Users_Roles" ManuallyRouted="false" />
+      <Diagram DiagramId="46a75c2ed02242bd817c280cc16e3339" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="CRM9Model.AdressSubscriber" Width="1.5" PointX="0.75" PointY="10.5" />
+        <EntityTypeShape EntityType="CRM9Model.Area" Width="1.5" PointX="11" PointY="1.75" />
+        <EntityTypeShape EntityType="CRM9Model.City" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="CRM9Model.Contract_Type" Width="1.5" PointX="0.75" PointY="18.125" />
+        <EntityTypeShape EntityType="CRM9Model.DivisionCode" Width="1.5" PointX="0.75" PointY="13.375" />
+        <EntityTypeShape EntityType="CRM9Model.FMS" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="CRM9Model.Gender" Width="1.5" PointX="0.75" PointY="6.625" />
+        <EntityTypeShape EntityType="CRM9Model.ReasonTerminate" Width="1.5" PointX="0.75" PointY="22.75" />
+        <EntityTypeShape EntityType="CRM9Model.Roles" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CRM9Model.SerialNumber" Width="1.5" PointX="0.75" PointY="20.375" />
+        <EntityTypeShape EntityType="CRM9Model.Service" Width="1.5" PointX="6" PointY="2.75" />
+        <EntityTypeShape EntityType="CRM9Model.Streets" Width="1.5" PointX="8.75" PointY="9.5" />
+        <EntityTypeShape EntityType="CRM9Model.Subscriber" Width="1.5" PointX="3" PointY="4" />
+        <EntityTypeShape EntityType="CRM9Model.Subscriber_Service" Width="1.5" PointX="8.25" PointY="6.5" />
+        <EntityTypeShape EntityType="CRM9Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="10.5" />
+        <EntityTypeShape EntityType="CRM9Model.TypeBilding" Width="1.5" PointX="8.75" PointY="2.125" />
+        <EntityTypeShape EntityType="CRM9Model.Users" Width="1.5" PointX="6" PointY="6" />
+        <AssociationConnector Association="CRM9Model.FK_Subscriber_AdressSubscriber" />
+        <AssociationConnector Association="CRM9Model.FK_Area_TypeBilding" />
+        <AssociationConnector Association="CRM9Model.FK_Subscriber_Contract_Type" />
+        <AssociationConnector Association="CRM9Model.FK_Subscriber_DivisionCode" />
+        <AssociationConnector Association="CRM9Model.FK_Subscriber_FMS" />
+        <AssociationConnector Association="CRM9Model.FK_Subscriber_Gender" />
+        <AssociationConnector Association="CRM9Model.FK_Users_Gender" />
+        <AssociationConnector Association="CRM9Model.FK_Subscriber_ReasonTerminate" />
+        <AssociationConnector Association="CRM9Model.FK_Users_Roles" />
+        <AssociationConnector Association="CRM9Model.FK_Subscriber_SerialNumber" />
+        <AssociationConnector Association="CRM9Model.FK_Subscriber_Service_Service" />
+        <AssociationConnector Association="CRM9Model.FK_Subscriber_Service_Subscriber" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

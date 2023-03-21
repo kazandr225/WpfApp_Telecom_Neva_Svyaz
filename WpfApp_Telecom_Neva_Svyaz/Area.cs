@@ -12,18 +12,15 @@ namespace WpfApp_Telecom_Neva_Svyaz
     using System;
     using System.Collections.Generic;
     
-    public partial class Roles
+    public partial class Area
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Roles()
-        {
-            this.Users = new HashSet<Users>();
-        }
+        public int idArea { get; set; }
+        public string AreaName { get; set; }
+        public string Sqare { get; set; }
+        public int Population { get; set; }
+        public int CountMetro { get; set; }
+        public int idTypeBinding { get; set; }
     
-        public int idRole { get; set; }
-        public string Role { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Users> Users { get; set; }
+        public virtual TypeBilding TypeBilding { get; set; }
     }
 }

@@ -25,8 +25,22 @@ namespace WpfApp_Telecom_Neva_Svyaz
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<AdressSubscriber> AdressSubscriber { get; set; }
+        public virtual DbSet<Area> Area { get; set; }
+        public virtual DbSet<City> City { get; set; }
+        public virtual DbSet<Contract_Type> Contract_Type { get; set; }
+        public virtual DbSet<DivisionCode> DivisionCode { get; set; }
+        public virtual DbSet<FMS> FMS { get; set; }
+        public virtual DbSet<Gender> Gender { get; set; }
+        public virtual DbSet<ReasonTerminate> ReasonTerminate { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
+        public virtual DbSet<SerialNumber> SerialNumber { get; set; }
+        public virtual DbSet<Service> Service { get; set; }
+        public virtual DbSet<Streets> Streets { get; set; }
+        public virtual DbSet<Subscriber> Subscriber { get; set; }
+        public virtual DbSet<Subscriber_Service> Subscriber_Service { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<TypeBilding> TypeBilding { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }
 }

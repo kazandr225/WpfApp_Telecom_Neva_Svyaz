@@ -12,18 +12,18 @@ namespace WpfApp_Telecom_Neva_Svyaz
     using System;
     using System.Collections.Generic;
     
-    public partial class Roles
+    public partial class FMS
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Roles()
+        public FMS()
         {
-            this.Users = new HashSet<Users>();
+            this.Subscriber = new HashSet<Subscriber>();
         }
     
-        public int idRole { get; set; }
-        public string Role { get; set; }
+        public int idIssued { get; set; }
+        public string FMS1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Users> Users { get; set; }
+        public virtual ICollection<Subscriber> Subscriber { get; set; }
     }
 }

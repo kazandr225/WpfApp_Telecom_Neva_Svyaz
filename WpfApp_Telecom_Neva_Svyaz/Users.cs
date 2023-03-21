@@ -14,11 +14,17 @@ namespace WpfApp_Telecom_Neva_Svyaz
     
     public partial class Users
     {
-        public int ID { get; set; }
+        public int idUser { get; set; }
+        public string Surname { get; set; }
+        public string FirstName { get; set; }
+        public string Patronymic { get; set; }
+        public int idGender { get; set; }
+        public string image { get; set; }
         public string Phone { get; set; }
         public string Password { get; set; }
-        public int ID_Role { get; set; }
+        public int idRole { get; set; }
     
+        public virtual Gender Gender { get; set; }
         public virtual Roles Roles { get; set; }
     }
 }
