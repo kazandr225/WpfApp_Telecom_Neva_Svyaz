@@ -22,6 +22,9 @@ namespace WpfApp_Telecom_Neva_Svyaz
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        //454566 - номер
+        //221 - пароль
         public MainWindow()
         {
             InitializeComponent();
